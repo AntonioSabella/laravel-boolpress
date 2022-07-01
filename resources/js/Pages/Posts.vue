@@ -14,6 +14,7 @@
                                         <div class="card-body">
                                             <h5><strong>{{ post.title }}</strong></h5>
                                             <p><strong>{{ trimText(post.content) }}</strong></p>
+                                            <router-link :to="{ name: 'post', params: { slug: post.slug } }">Read more</router-link>
                                         </div>
                                         <div class="card-footer">
                                             <div class="row">
@@ -164,3 +165,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+aside {
+    .widget {
+        margin-bottom: 1rem;
+        padding: 0.25rem;
+        border-radius: 1rem;
+        background-color: rgb(233, 229, 229);
+    }
+}
+
+.posts{
+    .card-body {
+        h5 {
+            height: 50px;
+        }
+        p {
+            height: 60px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+</style>

@@ -30,8 +30,6 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     ])->except(['show', 'create', 'edit']);
 });
 
-
-
 // Va inserita come ultima rotta, al fine di "catturare" la view guest.home se non lo sono le precedenti
 Route::get("{any?}", function () {
     return view("guest.home");
